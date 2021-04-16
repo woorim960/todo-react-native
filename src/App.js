@@ -59,6 +59,12 @@ const App = () => {
     setTasks(currentTasks);
   };
 
+  const _updateTask = (item) => {
+    const currentTasks = Object.assign({}, tasks);
+    currentTasks[item.id] = item;
+    setTasks(currentTasks);
+  };
+
   const _handleTextChange = (text) => {
     setNewTask(text);
   };
@@ -86,6 +92,7 @@ const App = () => {
                 item={item}
                 deleteTask={_deleteTask}
                 toggleTask={_toggleTask}
+                updateTask={_updateTask}
               />
             ))}
         </List>
