@@ -6,8 +6,6 @@ import Input from "./components/Input";
 import Task from "./components/Task";
 import AsyncStorage from "@react-native-community/async-storage";
 import AppLoading from "expo-app-loading";
-import { images } from "./images";
-import IconButton from "./components/IconButton";
 
 const Container = styled.SafeAreaView`
   flex: 1;
