@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components/native";
 import { Dimensions } from "react-native";
 import PropTypes from "prop-types";
@@ -25,8 +25,15 @@ const Input = ({
 }) => {
   const width = Dimensions.get("window").width;
 
+  const refInput = useRef(null);
+
+  useEffect(() => {
+    if (value.length > 0) refInput.current.focus();
+  }, []);
+
   return (
     <StyledInput
+      ref={refInput}
       width={width}
       placeholder={placeholder}
       maxLength={50}
